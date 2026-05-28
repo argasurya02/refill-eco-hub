@@ -9,8 +9,68 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WalletRouteImport } from './routes/wallet'
+import { Route as TransactionsRouteImport } from './routes/transactions'
+import { Route as RewardsRouteImport } from './routes/rewards'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as RefillRouteImport } from './routes/refill'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as MachinesRouteImport } from './routes/machines'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as EcoImpactRouteImport } from './routes/eco-impact'
+import { Route as BottlesRouteImport } from './routes/bottles'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WalletRoute = WalletRouteImport.update({
+  id: '/wallet',
+  path: '/wallet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransactionsRoute = TransactionsRouteImport.update({
+  id: '/transactions',
+  path: '/transactions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RewardsRoute = RewardsRouteImport.update({
+  id: '/rewards',
+  path: '/rewards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefillRoute = RefillRouteImport.update({
+  id: '/refill',
+  path: '/refill',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MachinesRoute = MachinesRouteImport.update({
+  id: '/machines',
+  path: '/machines',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcoImpactRoute = EcoImpactRouteImport.update({
+  id: '/eco-impact',
+  path: '/eco-impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BottlesRoute = BottlesRouteImport.update({
+  id: '/bottles',
+  path: '/bottles',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +79,172 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bottles': typeof BottlesRoute
+  '/eco-impact': typeof EcoImpactRoute
+  '/login': typeof LoginRoute
+  '/machines': typeof MachinesRoute
+  '/profile': typeof ProfileRoute
+  '/refill': typeof RefillRoute
+  '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
+  '/transactions': typeof TransactionsRoute
+  '/wallet': typeof WalletRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bottles': typeof BottlesRoute
+  '/eco-impact': typeof EcoImpactRoute
+  '/login': typeof LoginRoute
+  '/machines': typeof MachinesRoute
+  '/profile': typeof ProfileRoute
+  '/refill': typeof RefillRoute
+  '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
+  '/transactions': typeof TransactionsRoute
+  '/wallet': typeof WalletRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bottles': typeof BottlesRoute
+  '/eco-impact': typeof EcoImpactRoute
+  '/login': typeof LoginRoute
+  '/machines': typeof MachinesRoute
+  '/profile': typeof ProfileRoute
+  '/refill': typeof RefillRoute
+  '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
+  '/transactions': typeof TransactionsRoute
+  '/wallet': typeof WalletRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bottles'
+    | '/eco-impact'
+    | '/login'
+    | '/machines'
+    | '/profile'
+    | '/refill'
+    | '/register'
+    | '/rewards'
+    | '/transactions'
+    | '/wallet'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bottles'
+    | '/eco-impact'
+    | '/login'
+    | '/machines'
+    | '/profile'
+    | '/refill'
+    | '/register'
+    | '/rewards'
+    | '/transactions'
+    | '/wallet'
+  id:
+    | '__root__'
+    | '/'
+    | '/bottles'
+    | '/eco-impact'
+    | '/login'
+    | '/machines'
+    | '/profile'
+    | '/refill'
+    | '/register'
+    | '/rewards'
+    | '/transactions'
+    | '/wallet'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BottlesRoute: typeof BottlesRoute
+  EcoImpactRoute: typeof EcoImpactRoute
+  LoginRoute: typeof LoginRoute
+  MachinesRoute: typeof MachinesRoute
+  ProfileRoute: typeof ProfileRoute
+  RefillRoute: typeof RefillRoute
+  RegisterRoute: typeof RegisterRoute
+  RewardsRoute: typeof RewardsRoute
+  TransactionsRoute: typeof TransactionsRoute
+  WalletRoute: typeof WalletRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wallet': {
+      id: '/wallet'
+      path: '/wallet'
+      fullPath: '/wallet'
+      preLoaderRoute: typeof WalletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transactions': {
+      id: '/transactions'
+      path: '/transactions'
+      fullPath: '/transactions'
+      preLoaderRoute: typeof TransactionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rewards': {
+      id: '/rewards'
+      path: '/rewards'
+      fullPath: '/rewards'
+      preLoaderRoute: typeof RewardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refill': {
+      id: '/refill'
+      path: '/refill'
+      fullPath: '/refill'
+      preLoaderRoute: typeof RefillRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/machines': {
+      id: '/machines'
+      path: '/machines'
+      fullPath: '/machines'
+      preLoaderRoute: typeof MachinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eco-impact': {
+      id: '/eco-impact'
+      path: '/eco-impact'
+      fullPath: '/eco-impact'
+      preLoaderRoute: typeof EcoImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bottles': {
+      id: '/bottles'
+      path: '/bottles'
+      fullPath: '/bottles'
+      preLoaderRoute: typeof BottlesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +257,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BottlesRoute: BottlesRoute,
+  EcoImpactRoute: EcoImpactRoute,
+  LoginRoute: LoginRoute,
+  MachinesRoute: MachinesRoute,
+  ProfileRoute: ProfileRoute,
+  RefillRoute: RefillRoute,
+  RegisterRoute: RegisterRoute,
+  RewardsRoute: RewardsRoute,
+  TransactionsRoute: TransactionsRoute,
+  WalletRoute: WalletRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
